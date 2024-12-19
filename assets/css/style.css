@@ -1,0 +1,23 @@
+.product-colors {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+.color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+.color-circle.selected {
+    border: 2px solid #000;
+}
+#selected-color-label {
+    margin-top: 5px;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    color: inherit;
+}
