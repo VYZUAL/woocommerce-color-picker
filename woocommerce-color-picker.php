@@ -5,9 +5,10 @@
  * Version: 1.0
  * Author: Ilona de Haan
  * Author URI: https://vyzual.nl
+ * License: GPL2
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: woocommerce-color-picker
  * Domain Path: /languages
- * Update URI: false
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
