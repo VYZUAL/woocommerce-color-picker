@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WooCommerce Color Picker
  * Description: Adds a color picker to WooCommerce attributes and replaces variation dropdowns with clickable color swatches.
- * Version: 1.0
+ * Version: 1.1
  * Author: Ilona de Haan
  * Author URI: https://vyzual.nl
  * License: GPL2
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define constants
-define( 'WCCP_VERSION', '1.0' );
+define( 'WCCP_VERSION', '1.1' );
 define( 'WCCP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WCCP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
@@ -31,14 +31,14 @@ function wccp_init() {
 }
 add_action( 'plugins_loaded', 'wccp_init' );
 
-// Register scripts and styles
+// Register assets
 function wccp_register_assets() {
     wp_register_style( 'wccp-styles', WCCP_PLUGIN_URL . 'assets/css/style.css', [], WCCP_VERSION );
     wp_register_script( 'wccp-scripts', WCCP_PLUGIN_URL . 'assets/js/script.js', [ 'jquery' ], WCCP_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'wccp_register_assets' );
 
-// Load text domain for translations
+// Load translations
 function wccp_load_textdomain() {
     load_plugin_textdomain( 'woocommerce-color-picker', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
