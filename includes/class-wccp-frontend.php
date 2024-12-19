@@ -6,11 +6,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class WCCP_Frontend {
 
+    /**
+     * Initialize the frontend functionality.
+     */
     public static function init() {
         add_action( 'woocommerce_before_add_to_cart_form', [ __CLASS__, 'display_color_circles' ] );
         add_action( 'wp_enqueue_scripts', [ __CLASS__, 'enqueue_assets' ] );
+
+        // Verberg de "Wissen"-optie via een WooCommerce filter
+        add_filter( 'woocommerce_reset_variations_link', '__return_empty_string' );
     }
 
+    /**
+     * Display the color circles on the product page.
+     */
     public static function display_color_circles() {
         global $product;
 
@@ -32,6 +41,9 @@ class WCCP_Frontend {
         }
     }
 
+    /**
+     * Enqueue the required assets for the frontend.
+     */
     public static function enqueue_assets() {
         if ( is_product() ) {
             wp_enqueue_style( 'wccp-styles' );
